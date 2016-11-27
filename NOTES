@@ -6,6 +6,7 @@
 - Proven to be Turing-Complete.
 - The first imperative, structured, Turing-complete programming language without a GOTO mechanism.
 - Consists of only four instructions: R, λ, (, )
+- Effectively a manifestation of a Turing machine as Lisp was a manifestation of Church' Lambda Calculus.
 
 - Syntax rules are simple:
   (i)    λ, R ∈ p″
@@ -34,3 +35,8 @@
     - r n times, which will decrement current cell. n = size of memory
   - L  = r′λ
     - Move left one cell.
+
+- Now we have:
+  - p″: L, R, r, r′, (, )
+  - BF: <, >, +, -, [, ]
+  - There is no input/output as it's a theoretical machine. But one would add in if creating actual machine.
