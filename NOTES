@@ -1,4 +1,4 @@
-- P′′
+- P′′(P Prime Prime)
 - An esoteric/primitive programming language
 - Invented by Corrado Böhm in 1964
 - Published in paper entitled: "On a family of Turing machines and the related programming language"
@@ -7,4 +7,17 @@
 - The first imperative, structured, Turing-complete programming language without a GOTO mechanism.
 - Consists of only four instructions: R, λ, (, )
 - Is sufficient to provide some simple abstractions to match the instructions of brainfuck exactly
-  - 
+  -
+
+- Syntax rules are simple:
+  (i)    λ, R ∈ p″
+    - λ and R are words in P″
+  (ii)   q₁, q₂ ∈ p″ implies q₁q₂ ∈ p″
+    - If q₁ and q₂ are words in p″ then q₁q₂ is a word in p″
+  (iii)  q ∈ p″ implies (q) ∈ p″
+    - If q is a word in P″, then (q) is a word in P″
+  (iiii) Only the expressions that can be derived from (i), (ii), (iii) belong to P″
+    - There are no more rules
+
+- Semantics
+
