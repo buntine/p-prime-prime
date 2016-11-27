@@ -17,6 +17,16 @@
   (iiii) Only the expressions that can be derived from (i), (ii), (iii) belong to P″
     - There are no more rules
 
+- Semantics
+  - {a[0], a[1]...a[n]} = The alphabet of a Turing machine, where a[0] is the blank symbol (default value).
+        - As per usual, there is precisely the sufficient amount of cells available for the computation at hand.
+  - λ   = Replace the current symbol, C[i], with c[i+1] (where c[n+1] = c[0]) and then move tape head left one position.
+        - This is saying that the tape wraps from the right. So: c[i] = c[i+1] mod (n+1)
+  - R   = Move tape head right one position (if possible).
+  - (q) = Iterate q in loop while current position is not a[0]
+  - Any valid P″ program is a word.
+  - Execution starts at a[0] and proceeds left-to-right until there is nothing left to execute.
+
 - Is sufficient to provide some simple abstractions to match the instructions of brainfuck exactly
   - r  = λR
     - Increment current cell.
@@ -24,9 +34,3 @@
     - r n times, which will decrement current cell. n = size of memory
   - L  = r′λ
     - Move left one cell.
-
-
-
-
-- Semantics
-
