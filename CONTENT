@@ -6,4 +6,19 @@ The incessantly lovely Brainfuck was created in 1993 by Urban Müller in an atte
 
 In this article, I'm going to show that Brainfuck is actually an informal dialect of a language invented in Italy 30 years prior.
 
-## P′′
+## Corrado Böhm and Structured Programming
+
+- Talk aout non-structured programming
+- GOTO bad
+- BOHM
+- Papers on p''
+
+## p''
+
+- Syntax
+- Semantics
+
+## Brainfuck
+
+- Abstractions on p''
+- Examples
