@@ -6,7 +6,8 @@
 - Proven to be Turing-Complete.
 - The first imperative, structured, Turing-complete programming language without a GOTO mechanism.
 - Consists of only four instructions: R, λ, (, )
-- Effectively a manifestation of a Turing machine as Lisp was a manifestation of Church' Lambda Calculus.
+- Effectively a manifestation of a Turing machine 
+  - In the same manner that Lisp was a manifestation of Church' Lambda Calculus.
 
 - Syntax rules are simple:
   (i)    λ, R ∈ p″
@@ -33,6 +34,7 @@
     - Increment current cell.
   - r′ = rⁿ
     - r n times, which will decrement current cell. n = size of memory
+    - TODO: How to implement?
   - L  = r′λ
     - Move left one cell.
 
@@ -40,3 +42,20 @@
   - p″: L, R, r, r′, (, )
   - BF: <, >, +, -, [, ]
   - There is no input/output as it's a theoretical machine. But one would add in if creating actual machine.
+
+- Example:
+  - R ( R ) L ( r' ( L ( L ) ) r' L ) R r
+    - Compute the predecessor (x-1) of an integer x > 0
+
+  - R         = Move right one place
+    ( R )     = Move all the way to the right
+    L         = Move left one place
+    ( r'      = Decement current cell
+      ( L     = Move left one place
+        ( L ) = Move all the way to the left
+      )
+      r'      = Decrement current cell
+      L       = Move left one place
+    )
+    R         = Move right one place
+    r         = Increment current cell
