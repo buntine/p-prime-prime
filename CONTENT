@@ -1,0 +1,9 @@
+# P′′ - The Original Brainf*ck
+
+When we think of esoteric programming languages, most of us quickly gravitate towards, the now infamous, [Brainfuck](aaa) - a super minimal programming language that achieves [Turing Completeness](aaa) in just six simple instructions (not including the two instructions for I/O).
+
+The incessantly lovely Brainfuck was created in 1993 by Urban Müller in an attempt to construct a usable (not necessarily Turing complete - that was proven later) programming language with a compiler under 1024 bytes. Why 1024 bytes? Well, he had been inspired by Wouter van Oortmerssen's [FALSE](aaa), a stack-based language with a compiler of exactly 1024 bytes. So I guess you could say it was a competition of sorts.
+
+In this article, I'm going to show that Brainfuck is actually an informal dialect of a language invented in Italy 30 years prior.
+
+## P′′
