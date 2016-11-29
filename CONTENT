@@ -8,9 +8,14 @@ In this article, we will see that Brainfuck is actually an informal dialect of a
 
 Let's talk about a bit about Corrado Böhm's place in the history of Computer Science before we get into the nuts and bolts of his decidedly strangely-named creation.
 
-## Corrado Böhm and Structured Programming
+## Corrado Böhm and the Structured Programm Theorem
 
-- Talk aout non-structured programming
+When we talk about "programming" today, we are almost universally referring to what is known as "structured programming". That is, writing programs that employ the use of block structures, functions and loops. Pretty simple, huh? In fact, this all seems so obvious nowadays that we don't feel the need to quality so specifically what we mean - so we use more general terms like "imperative" and "declarative" to describe our favourite languages.
+
+But it wasn't always this way.
+
+Many of the earliest programming languages, including heavy-hitters like BASIC, FORTRAN, COBOL and several assembly languages, were unstructured: aaa
+
 - GOTO bad
 - BOHM
 - Papers on p''
