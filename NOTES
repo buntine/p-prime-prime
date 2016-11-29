@@ -35,7 +35,7 @@
     - Increment current cell.
   - r′ = rⁿ
     - r n times, which will decrement current cell. n = size of memory
-    - TODO: How to implement?
+    - It's a macro! It's relative to the size, N, of the alphabet.
   - L  = r′λ
     - Move left one cell.
 
