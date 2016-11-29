@@ -10,11 +10,15 @@ Let's talk about a bit about Corrado Böhm's place in the history of Computer Sc
 
 ## Corrado Böhm and the Structured Programm Theorem
 
-When we talk about "programming" today, we are almost universally referring to what is known as "structured programming". That is, writing programs that employ the use of block structures, functions and loops. Pretty simple, huh? In fact, this all seems so obvious nowadays that we don't feel the need to quality so specifically what we mean - so we use more general terms like "imperative" and "declarative" to describe our favourite languages.
+When we talk about "programming" today, we are almost universally referring to what is known as "structured programming". That is, writing programs that employ the use of block structures, functions and loops. Pretty simple, huh? In fact, this all seems so obvious nowadays that we don't feel the need to quality so specifically what we mean - so we use more general terms like "imperative" and "declarative" to describe our favourite languages. The structured part is kind of a given.
 
 But it wasn't always this way.
 
-Many of the earliest programming languages, including heavy-hitters like BASIC, FORTRAN, COBOL and several assembly languages, were unstructured: aaa
+Many of the earliest programming languages, including heavy-hitters like BASIC, FORTRAN, COBOL <sup>1</sup> and several assembly languages, were *unstructured*: Statements were sequentially ordered, generally one per-line. The lines were given labels or numbered in such a way that a program could perform an *unconditional jump* from one part of the program to the other.
+
+And when I say "jump", I really mean jump! Execution was not returned back to the calling context unless the program physically asked it to. One could, at least theoretically, jump straight into the middle of a `SUBROUTINE` or an `IF`. Following the execution of a program meant tracing all of the jumps. Such a messy form of execution eventully gave rise to a phrase we still hear a lot of today (but never about our own code, of course): "Spaghetti code" <sup>2</sup>!
+
+Yes, I am talk about the notorious `GO TO`. 
 
 - GOTO bad
 - BOHM
@@ -29,3 +33,6 @@ Many of the earliest programming languages, including heavy-hitters like BASIC, 
 
 - Abstractions on p''
 - Examples
+
+1. BASIC, FORTRAN and COBOL all added support for structured programming in later versions.
+2. It's not known exactly who coined this term, but an early usage comes from the Guy L. Steeles 1977 paper: [Macaroni is better than spaghetti](http://dl.acm.org/citation.cfm?id=806933)
