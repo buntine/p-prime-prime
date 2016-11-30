@@ -22,7 +22,7 @@ And when I say "jump", I really mean jump! Execution was not returned back to th
 
 In case you haven't worked it out already; yes, I am talking about the notorious `GO TO`. 
 
-The early '60s were dominated by the debate over structured vs. non-structured programming. This was further ignited when a landmark paper titled "Flow diagrams, Turing Machines and Languages with only Two Formation Rules" was published by Corrado Böhm and Giuseppe Jacopini. This paper <sup>4></sup> provided the theoretical foundation for structured programming (and therefore the abolishment of `GOTO`) by proving that one can compute any computable function with only three simple control structures:
+The early '60s were dominated by the debate over structured vs. non-structured programming. This was further ignited when a landmark paper titled "Flow diagrams, Turing Machines and Languages with only Two Formation Rules" was published by Corrado Böhm and Giuseppe Jacopini in 1966. This paper <sup>4</sup> provided the theoretical foundation for structured programming (and therefore the abolishment of `GOTO`) by proving that one can compute any computable function with only three simple control structures:
 
 1. Execute one subprogram, and then another subprogram (sequence)
 2. Execute one of two subprograms according to the value of a boolean expression (selection/branching)
