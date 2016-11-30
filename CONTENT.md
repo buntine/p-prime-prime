@@ -4,7 +4,7 @@ When we think of esoteric programming languages, most of us quickly gravitate to
 
 The incessantly lovely Brainfuck was created in 1993 by Urban Müller in an attempt to construct a usable - albeit barely - programming language with a compiler under 1024 bytes. Why 1024 bytes? Well, he had been inspired by Wouter van Oortmerssen's [FALSE](aaa), a stack-based language with a compiler of exactly 1024 bytes. So I guess you could say it was a competition of sorts.
 
-In this article, purely for the fun of it, we will see that Brainfuck is actually an informal dialect of a programming language invented in Italy 30 years prior: Corrado Böhm's P′′ (or "P Prime Prime").
+In this article, purely for the fun of it, we will see that Brainfuck is actually an informal dialect of a programming language invented in Italy 30 years prior: Corrado Böhm's P′′ (or "P Prime Prime"). I do expect that the reader is familiar with Brainfuck - although, if you've never heard of it, I definitely recommend you take a look. Oh, and don't worry; despite the scary name, it's really very easy to learn (note, I didn't say "easy to use"!). 
 
 Let's talk about a bit about Corrado Böhm's place in the history of Computer Science before we get into the nuts and bolts of his decidedly strangely-named creation.
 
