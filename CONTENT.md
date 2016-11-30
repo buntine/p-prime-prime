@@ -32,6 +32,13 @@ To demonstrate this in relation to Turing machines, they, of course, used a prog
 
 ## P′′, the Grandmother of the Turing Tarpits
 
+P′′ is a very simple language that consists of only four instructions: `R`, `λ`, `(` and `)`. Böhm defined the syntax rules as follows:
+
+1. `λ, R ∈ p″`:`λ` and `R` are words in p″.
+2. `q₁, q₂ ∈ p″` implies `q₁q₂ ∈ p″`: If `q₁, q₂` is a word in p″, then so is `q₁q₂`.
+3. `q ∈ p″` implies `(q) ∈ p″`: if `q` is a word in p″, then so is `(q)`. 
+4. Only the expressions that can be derived from rules 1, 2 and 3 belong to P″.
+
 - Syntax
 - Semantics
 
