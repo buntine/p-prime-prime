@@ -1,10 +1,10 @@
 # P′′ - The Original Brainf*ck
 
-When we think of esoteric programming languages, most of us quickly gravitate towards, the now infamous, [Brainfuck](aaa) - a super minimal programming language that achieves [Turing Completeness](aaa) in just six simple instructions (not including the two instructions for I/O).
+When we think of esoteric programming languages, most of us quickly gravitate towards one in particular: the infamous [Brainfuck](aaa) - a super minimal programming language that achieves [Turing Completeness](aaa) in just six simple instructions (not including the two instructions for I/O).
 
 The incessantly lovely Brainfuck was created in 1993 by Urban Müller in an attempt to construct a usable - albeit barely - programming language with a compiler under 1024 bytes. Why 1024 bytes? Well, he had been inspired by Wouter van Oortmerssen's [FALSE](aaa), a stack-based language with a compiler of exactly 1024 bytes. So I guess you could say it was a competition of sorts.
 
-In this article, we will see that Brainfuck is actually an informal dialect of a programming language invented in Italy 30 years prior: Corrado Böhm's P′′ (or "P Prime Prime").
+In this article, purely for the fun of it, we will see that Brainfuck is actually an informal dialect of a programming language invented in Italy 30 years prior: Corrado Böhm's P′′ (or "P Prime Prime").
 
 Let's talk about a bit about Corrado Böhm's place in the history of Computer Science before we get into the nuts and bolts of his decidedly strangely-named creation.
 
@@ -12,15 +12,17 @@ Let's talk about a bit about Corrado Böhm's place in the history of Computer Sc
 
 **You can skip this section if you're only interested in the details and not the motivation**
 
-When we talk about "programming" today, we are almost universally referring to what is known as "structured programming". That is, writing programs that employ the use of block structures, functions and loops. Pretty simple, huh? In fact, this all seems so obvious nowadays that we don't feel the need to quality so specifically what we mean - so we use more general terms like "imperative" and "declarative" to describe our favourite languages. The structured part is kind of a given.
+When we talk about "programming" today, we are almost universally referring to what is known as "structured programming". That is, writing programs that employ the use of block structures, functions and loops. Pretty simple, huh? In fact, this all seems so obvious nowadays that we don't feel the need to quality so specifically what we mean - so we use more general terms like "imperative" and "declarative" to describe our favourite languages. The whole "structured" part is kind of a given.
 
-But it wasn't always this way.
+But it wasn't always this way...
 
-Many of the earliest programming languages, including heavy-hitters like BASIC, FORTRAN, COBOL <sup>1</sup> and several assembly languages, were *unstructured*: Statements were sequentially ordered, generally one per-line. The lines were given labels or numbered in such a way that a program could perform an *unconditional jump* from one part of the program to the other.
+Many of the earliest programming languages, including heavy-hitters like BASIC, FORTRAN, COBOL <sup>1</sup> and several assembly languages, were *unstructured*: Statements were sequentially ordered, generally one per-line. And those lines were given labels or numbered in such a way that a program could perform an *unconditional jump* from one part of the program to the other.
 
-And when I say "jump", I really mean jump! Execution was not returned back to the calling context unless it was physically asked with another jump. One could, at least theoretically, jump straight into the middle of a `SUBROUTINE` or an `IF` <sup>2</sup.. Following the execution of a program meant tracing all of the jumps. Such a messy form of execution eventully gave rise to a phrase we still hear a lot of today (but never about our own code, of course): "Spaghetti code" <sup>3</sup>!
+And when I say "jump", I really mean jump! Execution was not returned back to the calling context as is the case with a function call (unless, of course, it was physically asked with another jump). One could, at least theoretically, jump straight into the middle of a `SUBROUTINE` or an `IF` <sup>2</sup. Following the execution of a program meant tracing all of the jumps. Such a messy form of execution eventully gave rise to a phrase we still hear a lot of today (but never about our own code, of course): "Spaghetti code" <sup>3</sup>!
 
 In case you haven't worked it out already; yes, I am talk about the notorious `GO TO`. 
+
+
 
 - GOTO bad
 - BOHM
