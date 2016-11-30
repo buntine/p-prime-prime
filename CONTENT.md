@@ -18,7 +18,7 @@ But it wasn't always this way...
 
 Many of the earliest programming languages, including heavy-hitters like BASIC, FORTRAN, COBOL <sup>1</sup> and several assembly languages, were *unstructured*: Statements were sequentially ordered, generally one per-line. And those lines were given labels or numbered in such a way that a program could perform an *unconditional jump* from one part of the program to the other.
 
-And when I say "jump", I really mean jump! Execution was not returned back to the calling context as is the case with a function call (unless, of course, it was physically asked with another jump). One could, at least theoretically, jump straight into the middle of a `SUBROUTINE` or an `IF` <sup>2</sup. Following the execution of a program meant tracing all of the jumps. Such a messy form of execution eventully gave rise to a phrase we still hear a lot of today (but never about our own code, of course): "Spaghetti code" <sup>3</sup>!
+And when I say "jump", I really mean jump! Execution was not returned back to the calling context as is the case with a function call (unless, of course, it was physically asked with another jump). One could, at least theoretically, jump straight into the middle of a `SUBROUTINE` or an `IF` <sup>2</sup>. Following the execution of a program meant tracing all of the jumps. Such a messy form of execution eventully gave rise to a phrase we still hear a lot of today (but never about our own code, of course): "Spaghetti code" <sup>3</sup>!
 
 In case you haven't worked it out already; yes, I am talking about the notorious `GO TO`. 
 
@@ -43,4 +43,4 @@ To demonstrate this in relation to Turing machines, they, of course, used a prog
 1. BASIC, FORTRAN and COBOL all added support for structured programming in later versions.
 2. I guess this would make coroutines somewhat simple to implement.
 3. It's not known exactly who coined this term, but an early usage comes from the Guy L. Steeles 1977 paper: [Macaroni is better than spaghetti](http://dl.acm.org/citation.cfm?id=806933)
-4. This paper is known to be cited more than it's read. Ok, I admit, I tried to read it. I really did. But before you judge me - [give it a shot yourself](http://www.cs.unibo.it/~martini/PP/bohm-jac.pdf).
+4. This paper is known to be cited more than it's read. OK, I admit, I tried to read it. I really did. But before you judge me - [give it a shot yourself](http://www.cs.unibo.it/~martini/PP/bohm-jac.pdf).
