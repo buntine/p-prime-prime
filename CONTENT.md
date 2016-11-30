@@ -20,13 +20,15 @@ Many of the earliest programming languages, including heavy-hitters like BASIC, 
 
 And when I say "jump", I really mean jump! Execution was not returned back to the calling context as is the case with a function call (unless, of course, it was physically asked with another jump). One could, at least theoretically, jump straight into the middle of a `SUBROUTINE` or an `IF` <sup>2</sup. Following the execution of a program meant tracing all of the jumps. Such a messy form of execution eventully gave rise to a phrase we still hear a lot of today (but never about our own code, of course): "Spaghetti code" <sup>3</sup>!
 
-In case you haven't worked it out already; yes, I am talk about the notorious `GO TO`. 
+In case you haven't worked it out already; yes, I am talking about the notorious `GO TO`. 
 
+The early '60s were dominated by the debate over structured vs. non-structured programming. This was further ignited when a landmark paper titled "Flow diagrams, Turing Machines and Languages with only Two Formation Rules" was published by Corrado Böhm and Giuseppe Jacopini. This paper <sup>4></sup> provided the theoretical foundation for structured programming (and therefore the abolishment of `GOTO`) by proving that one can compute any computable function with only three simple control structures:
 
+1. Execute one subprogram, and then another subprogram (sequence)
+2. Execute one of two subprograms according to the value of a boolean expression (selection/branching)
+3. Execute a subprogram until a boolean expression is true (iteration)
 
-- GOTO bad
-- BOHM
-- Papers on p''
+To demonstrate this in relation to Turing machines, they, of course, used a programming language: P′′
 
 ## P′′, the Grandmother of the Turing Tarpits
 
@@ -41,3 +43,4 @@ In case you haven't worked it out already; yes, I am talk about the notorious `G
 1. BASIC, FORTRAN and COBOL all added support for structured programming in later versions.
 2. I guess this would make coroutines somewhat simple to implement.
 3. It's not known exactly who coined this term, but an early usage comes from the Guy L. Steeles 1977 paper: [Macaroni is better than spaghetti](http://dl.acm.org/citation.cfm?id=806933)
+4. This paper is known to be cited more than it's read. Ok, I admit, I tried to read it. I really did. But before you judge me - [give it a shot yourself](http://www.cs.unibo.it/~martini/PP/bohm-jac.pdf).
