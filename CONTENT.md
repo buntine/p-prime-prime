@@ -32,7 +32,7 @@ To demonstrate this in relation to Turing machines, they, of course, used a prog
 
 ## P′′, the Grandmother of the Turing Tarpits
 
-P′′ is a very simple language. In fact, it's so simple that it can be confusing. Kinda' like those movies that are so bad they loop back around to being good. The language consists of only four instructions: `R`, `λ`, `(` and `)`. Böhm defined the syntax rules as follows:
+P′′ is a very simple. In fact, it's so simple that it can be confusing. Kinda' like those movies that are so bad they loop back around to being good again. The language consists of an alphabet of only four characters: `R`, `λ`, `(` and `)`. Böhm defined the syntax rules as follows:
 
 1. `λ, R ∈ p″`
 2. `q₁, q₂ ∈ p″` implies `q₁q₂ ∈ p″`
@@ -42,8 +42,8 @@ P′′ is a very simple language. In fact, it's so simple that it can be confus
 Right. Let's try that again in English:
 
 1. `λ` and `R` are programs in p″.
-2. If `q₁, q₂` is a word in p″, then so is `q₁q₂`. Programs can be composed.
-3. If `q` is a word in p″, then so is `(q)`. Any valid program can be iterated over - endless loops are still possible. This will make more sense when we get to the semantics.
+2. Programs can be composed. So, if `q₁` and `q₂` are programs in p″, then so is `q₁q₂`
+3. If `q` is a program in p″, then so is `(q)`. So, any valid program can be iterated over (endless loops are still possible). This will make more sense when we get to the semantics.
 4. That's it!
 
 - Syntax
