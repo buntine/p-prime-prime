@@ -46,13 +46,17 @@ Right. Let's try that again in English:
 3. If `q` is a program in p″, then so is `(q)`. So, any valid program can be iterated over (endless loops are still possible). This will make sense when we get to the semantics.
 4. That's it!
 
-- Syntax
 - Semantics
 
 ## Brainfuck
 
 - Abstractions on p''
 - Examples
+
+## Conclusion
+
+- Why?
+- Thanks
 
 1. BASIC, FORTRAN and COBOL all added support for structured programming in later versions.
 2. I guess this would make coroutines somewhat simple to implement.
