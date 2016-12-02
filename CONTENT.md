@@ -48,7 +48,7 @@ Right. Let's try that again in English:
 3. Any valid program can be iterated over. So, if `q` is a program in p″, then so is `(q)`. This will make sense when we get to the semantics.
 4. That's it!
 
-Böhm then goes on to explain the language semantics:
+Böhm then goes on to explain the language semantics, which I've summarized and simplified here:
 
 - The machine has a finite alphabet of length `N`, where `N > 1`. `0` is considered a special character. So each memory cell can contain any value from `0` to `N`.
 - Execution starts at the leftmost symbol and proceeds to the right until there is nothing left to compute.
