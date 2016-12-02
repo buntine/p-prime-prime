@@ -32,7 +32,9 @@ To demonstrate this in relation to Turing machines, they, of course, used a prog
 
 ## P′′, the Grandmother of the Turing Tarpits
 
-P′′ is a very simple. In fact, it's so simple that the whole thing can get a bit confusing. Kinda' like those movies that are so bad they loop back around to being good again. The language consists of an alphabet of only four characters: `R`, `λ`, `(` and `)`. Böhm defined the syntax rules as follows:
+P′′ is a very simple. In fact, it's so simple that the whole thing can get a bit confusing. Kinda' like those movies that are so bad they loop back around to being good again. The language consists of an alphabet of only four characters: `R`, `λ`, `(` and `)` that act upon a [Turing machine](https://en.wikipedia.org/wiki/Turing_machine) with infinite tape and a finite alphabet (the set of things that can be written in a memory cell - such as the digits `0..9`).
+
+Böhm defined the syntax rules <sup>5</sup> as follows:
 
 1. `λ, R ∈ p″`
 2. `q₁, q₂ ∈ p″` implies `q₁q₂ ∈ p″`
@@ -43,10 +45,14 @@ Right. Let's try that again in English:
 
 1. The characters `λ` and `R` are syntactically valid programs in p″.
 2. Programs can be composed. So, if `q₁` and `q₂` are programs in p″, then so is their composition: `q₁q₂`.
-3. If `q` is a program in p″, then so is `(q)`. So, any valid program can be iterated over (endless loops are still possible). This will make sense when we get to the semantics.
+3. Any valid program can be iterated over. So, if `q` is a program in p″, then so is `(q)`. This will make sense when we get to the semantics.
 4. That's it!
 
-- Semantics
+Böhm then goes on to explain the language semantics:
+
+- The machine has a finite alphabet of length `N`, where `N > 1`. `0` is considered a special character. So each memory cell can contain any value from `0` to `N`.
+- `R` is the operation of shifting the tapehead forward to the right one cell (if there is one).
+- `λ` is the operation of replacing the symbol, `c`, at the tapehead with `(c+1) mod (N+1)` and then shifting the tapehead to the left one cell. Note the modulus operation - so if `N = 5` then trying to increment `5` with result in the blank symbol `0` because `6 mod 6 = 0`.
 
 ## Brainfuck
 
@@ -62,3 +68,4 @@ Right. Let's try that again in English:
 2. I guess this would make coroutines somewhat simple to implement.
 3. It's not known exactly who coined this term, but an early usage comes from the Guy L. Steeles 1977 paper: [Macaroni is better than spaghetti](http://dl.acm.org/citation.cfm?id=806933)
 4. This paper is known to be cited more than it's read. OK, I admit, I tried to read it. I really did. But before you judge me - [give it a shot yourself](http://www.cs.unibo.it/~martini/PP/bohm-jac.pdf).
+5. Had Backus-Naur form been popular in '64, it would have looked something like this: `TODO`.
