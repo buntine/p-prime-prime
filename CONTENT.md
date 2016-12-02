@@ -52,7 +52,7 @@ Böhm then goes on to explain the language semantics:
 
 - The machine has a finite alphabet of length `N`, where `N > 1`. `0` is considered a special character. So each memory cell can contain any value from `0` to `N`.
 - `R` is the operation of shifting the tapehead forward to the right one cell (if there is one).
-- `λ` is the operation of replacing the symbol, `c`, at the tapehead with `(c+1) mod (N+1)` and then shifting the tapehead to the left one cell. Note the modulus operation - so if `N = 5` then trying to increment `5` with result in the blank symbol `0` because `6 mod 6 = 0`.
+- `λ` is the operation of replacing the symbol, `c`, at the tapehead with `(c+1) mod (N+1)` and then shifting the tapehead to the left one cell. Note the modulus operation - so if `N = 5` then trying to increment `5` will result in `0` (the blank symbol) because `6 mod 6 = 0`.
 
 ## Brainfuck
 
