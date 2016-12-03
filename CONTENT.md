@@ -32,7 +32,7 @@ To demonstrate this in relation to Turing machines, they, of course, used a prog
 
 ## P′′, the Grandmother of the Turing Tarpits
 
-P′′ is a very simple. In fact, it's so simple that the whole thing can get a bit confusing. Kinda' like those movies that are so bad they loop back around to being good again. The language consists of an alphabet of only four characters: `R`, `λ`, `(` and `)` that act upon a [Turing machine](https://en.wikipedia.org/wiki/Turing_machine) with infinite tape and a finite alphabet (the set of things that can be written in a memory cell - such as the digits `0..9`).
+P′′ is a very simple. In fact, it's so simple that the whole thing can get a bit confusing. Kinda' like those movies that are so bad they loop back around to being good again. The language consists of only four characters: `R`, `λ`, `(` and `)` that act upon a [Turing machine](https://en.wikipedia.org/wiki/Turing_machine) with infinite tape and a finite alphabet (the set of things that can be written in a memory cell - such as the digits `0..9`).
 
 Böhm defined the syntax rules <sup>5</sup> as follows:
 
@@ -50,11 +50,11 @@ Right. Let's try that again in English:
 
 Böhm then goes on to explain the language semantics, which I've summarized and simplified here:
 
-- The machine has a finite alphabet of length `N`, where `N > 1`. `0` is considered a special character. So each memory cell can contain any value from `0` to `N`.
+- The machine has a finite alphabet of length `N`, where `N > 1`. `0` is considered a special character. So each memory cell can contain any value from `0` to `N`. Because we are dabbling in the theoretical world of Turing machines, we can say that the exact value of `N` is precisely what it needs to be for the computation at hand.
 - Execution starts at the leftmost symbol and proceeds to the right until there is nothing left to compute.
-- `R` is the operation of shifting the tapehead forward to the right one cell (if there is one).
+- `R` is the operation of shifting the tapehead (a.k.a *data pointer*) forward to the right one cell (if there is one).
 - `λ` is the operation of replacing the symbol, `c`, at the tapehead with `(c+1) mod (N+1)` and then shifting the tapehead to the left one cell. Note the modulus operation - so if `N = 5` then trying to increment `5` will result in `0` (the blank symbol) because `6 mod 6 = 0`.
-- `(q)`, where `q` is any valid program, is interpreted as a *while loop* that iterates while the current cell does not contain the blank symbol (`0`).
+- `(q)`, where `q` is any valid program, is interpreted as a *while loop* that iterates while the current cell does not contain the blank symbol (`0`). Endless loops are possible, of course.
 
 Let's run through a simple program:
 
