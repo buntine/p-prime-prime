@@ -117,7 +117,7 @@ And how does the same program look in Brainfuck?
 [- > + <]
 ```
 
-Awesome! Let's try another program that moves a value from cell `0` two places to the right (cell `2`):
+Awesome! Let's try another program<sup>6</sup> that moves a value from cell `0` two places to the right (cell `2`):
 
 ```
 R R ( D ) L L ( D R R I L L )
@@ -141,3 +141,4 @@ And, in Brainfuck:
 3. It's not known exactly who coined this term, but an early usage comes from the Guy L. Steeles 1977 paper: [Macaroni is better than spaghetti](http://dl.acm.org/citation.cfm?id=806933)
 4. This paper is known to be cited more than it's read. OK, I admit, I tried to read it. I really did. But before you judge me - [give it a shot yourself](http://www.cs.unibo.it/~martini/PP/bohm-jac.pdf).
 5. Had Backus-Naur form been popular in '64, it would have looked something like this: `TODO`.
+6. Courtesy of [esolangs](https://esolangs.org/wiki/brainfuck).
