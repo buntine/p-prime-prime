@@ -58,7 +58,7 @@ Böhm then goes on to explain the language semantics, which I've summarized and 
 
 In a paper published in 1964 for the International Computation Center in Rome, Böhm proved that p″ was Turing-complete, which makes it the first structured programming language that did not contain a `GOTO` instruction but instead relied upon iteration. Djikstra would go on to reference p″ in his now-famous paper: [GOTO considered harmful](aaa).
 
-Here is a simple program to add two numbers together for a Turing machine where `N = 3` and main memory looks like this `[2, 1]`:
+Here is a simple program to add two numbers together for a Turing machine where `N = 3` and main memory looks something like this `[2, 1]`:
 
 ```
 (
@@ -73,11 +73,22 @@ At the end of execution main memory will look like this: `[0, 3]`.
 
 Ok, cool, maybe you can see some minor similarities to Brainfuck, but we are definitely missing some things. And even in esoteric programming language terms, it's all very clunky!
 
-But, luckily for us, Böhm provided several small abstractions that allow us to a) write much simpler programs and b) literally become brainfuck.
+But, luckily for us, Böhm provided several small abstractions that allow us to write much simpler programs. And in doing so we will see that Brainfuck and p″ are equivalent.
 
 Let's take a look.
 
-## Brainfuck
+## Brainfuck == p″
+
+There are a few things we don't get out-of-the-box. Specifically, we need to be able to increment the current cell (without moving the tapehead), decrement the current cell and move the tapehead leftward. Let's define those as follows:
+
+<dl>
+  <dt>a</dt>
+  <dd>Yo yo</dd>
+  <dt>b</dt>
+  <dd>Yo yo</dd>
+  <dt>c</dt>
+  <dd>Yo yo</dd>
+</dl>
 
 - Abstractions on p''
 - Examples
