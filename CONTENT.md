@@ -50,7 +50,7 @@ Right. Let's try that again in English:
 
 Böhm then goes on to explain the language semantics, which I've summarized and simplified here:
 
-- The machine has a finite alphabet of length `N`, where `N > 1`. `0` is considered a special character. So each memory cell can contain any value from `0` to `N`. Because we are dabbling in the theoretical world of Turing machines, we can say that the exact value of `N` is precisely what it needs to be for the computation at hand.
+- The machine has a finite alphabet of length `N`, where `N > 1`. `0` is considered a special, blank symbol. So each memory cell can contain any value from `0` to `N`. Because we are dabbling in the theoretical world of Turing machines, we can say that the exact value of `N` is precisely what it needs to be for the computation at hand.
 - Execution starts at the leftmost symbol and proceeds to the right until there is nothing left to compute.
 - `R` is the operation of shifting the tapehead (a.k.a *data pointer*) forward to the right one cell (if there is one).
 - `λ` is the operation of replacing the symbol, `c`, at the tapehead with `(c+1) mod (N+1)` and then shifting the tapehead to the left one cell. Note the modulus operation - so if `N = 5` then trying to increment `5` will result in `0` (the blank symbol) because `6 mod 6 = 0`.
@@ -58,7 +58,7 @@ Böhm then goes on to explain the language semantics, which I've summarized and 
 
 In a paper published in 1964 for the International Computation Center in Rome, Böhm proved that p″ was Turing-complete, which makes it the first structured programming language that did not contain a `GOTO` instruction but instead relied upon iteration. Djikstra would go on to reference p″ in his now-famous paper: [GOTO considered harmful](aaa).
 
-Here is a simple program to add two numbers together for a Turing machine where `N = 3` and main memory looks like this `[2, 2]`:
+Here is a simple program to add two numbers together for a Turing machine where `N = 3` and main memory looks like this `[2, 1]`:
 
 ```
 (
@@ -69,17 +69,19 @@ Here is a simple program to add two numbers together for a Turing machine where 
 )          # Iterate if the current cell is not 0. This means we iterate twice in this example.
 ```
 
-At the end of execution main memory will look like this: `[0, 4]`.
+At the end of execution main memory will look like this: `[0, 3]`.
 
-Ok, cool. Maybe you can see some minor similarities to Brainfuck, but we are definitely missing some things. Even inn esoteric programming language terms, it's all very clunky. But, luckily for us, Böhm provided several small abstractions that allow us to a) write much simpler programs and b) literally become brainfuck.
+Ok, cool, maybe you can see some minor similarities to Brainfuck, but we are definitely missing some things. And even in esoteric programming language terms, it's all very clunky!
+
+But, luckily for us, Böhm provided several small abstractions that allow us to a) write much simpler programs and b) literally become brainfuck.
 
 Let's take a look.
 
 ## Brainfuck
 
-- Doesn't sound much like BF yet?
 - Abstractions on p''
 - Examples
+- Ta da!
 
 ## Conclusion
 
