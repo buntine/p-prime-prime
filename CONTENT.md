@@ -62,7 +62,7 @@ Here is a simple program to add two numbers together for a Turing machine where 
 
 ```
 (
- λRλRλR    # Decrement current cell (remembering that N+1 wraps back around to 0).
+ λRλRλR    # Decrement current cell (remember that N+1 wraps back around to 0, so decrementing translates to N increments).
  R         # Move tapehead right.
  λR        # Increment current cell.
  λRλRλRλ   # Move tapehead left (by decrementing the current cell and then executing one final λ).
