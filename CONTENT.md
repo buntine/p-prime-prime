@@ -56,7 +56,24 @@ Böhm then goes on to explain the language semantics, which I've summarized and 
 - `λ` is the operation of replacing the symbol, `c`, at the tapehead with `(c+1) mod (N+1)` and then shifting the tapehead to the left one cell. Note the modulus operation - so if `N = 5` then trying to increment `5` will result in `0` (the blank symbol) because `6 mod 6 = 0`.
 - `(q)`, where `q` is any valid program, is interpreted as a *while loop* that iterates while the current cell does not contain the blank symbol (`0`). Endless loops are possible, of course.
 
-Let's run through a simple program:
+In a paper published in 1964 for the International Computation Center in Rome, Böhm proved that p″ was Turing-complete, which makes it the first structured programming language that did not contain a `GOTO` instruction but instead relied upon iteration. Djikstra would go on to reference p″ in his now-famous paper: [GOTO considered harmful](aaa).
+
+Here is a simple program to add two numbers together for a Turing machine where `N = 3` and main memory looks like this `[2, 2]`:
+
+```
+(
+ λRλRλR    # Decrement current cell (remembering that N+1 wraps back around to 0).
+ R         # Move tapehead right.
+ λR        # Increment current cell.
+ λRλRλRλ   # Move tapehead left (by decrementing the current cell and then executing one final λ).
+)          # Iterate if the current cell is not 0. This means we iterate twice in this example.
+```
+
+At the end of execution main memory will look like this: `[0, 4]`.
+
+Ok, cool. Maybe you can see some minor similarities to Brainfuck, but we are definitely missing some things. Even inn esoteric programming language terms, it's all very clunky. But, luckily for us, Böhm provided several small abstractions that allow us to a) write much simpler programs and b) literally become brainfuck.
+
+Let's take a look.
 
 ## Brainfuck
 
