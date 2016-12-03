@@ -79,20 +79,57 @@ Let's take a look.
 
 ## Brainfuck == p″
 
-There are a few things we don't get out-of-the-box. Specifically, we need to be able to increment the current cell (without moving the tapehead), decrement the current cell and move the tapehead leftward. Let's define those as follows:
+There are a few things we don't get out-of-the-box. Specifically, we need to be able to:
+
+- Move the tapehead leftward.
+- Increment the current cell (without moving the tapehead).
+- Decrement the current cell.
+
+Let's define those as follows:
 
 <dl>
-  <dt>a</dt>
-  <dd>Yo yo</dd>
-  <dt>b</dt>
-  <dd>Yo yo</dd>
-  <dt>c</dt>
-  <dd>Yo yo</dd>
+  <dt>`I = λR`</dt>
+  <dd>**Increment**: Increment the current and move left, then move right.</dd>
+  <dt>`D = i^N`</dt>
+  <dd>**Decrement**: This is defined as `N` `i`'s in a row. So for a Turing machine where `N = 5` it's literally `iiiii`. So, you can think of `d` as a macro that expands at `N` `i`'s.</dd>
+  <dt>`L = Dλ`</dt>
+  <dd>**Left**: Decrement the current cell and then increment it (to restore the original value) and more leftward.</dd>
 </dl>
 
-- Abstractions on p''
-- Examples
-- Ta da!
+Ok, so now we can:
+
+- Move right (`R`)
+- Move left (`L`)
+- Increment (`I`)
+- Decrement (`D`)
+- Open loop (`(`)
+- Close loop (`)`)
+
+So, finally, let's write the previous program again with our new abstractions:
+
+```
+(D R I L)
+```
+
+And how does the same program look in Brainfuck?
+
+```
+[- > + <]
+```
+
+Awesome! Let's try another program that moves a value from cell `0` two places to the right (cell `2`):
+
+```
+R R ( D ) L L ( D R R I L L )
+```
+
+```
+> > [ - ] < < [ - > > + < < ]
+```
+
+Even awesome-er!
+
+And, in Brainfuck:
 
 ## Conclusion
 
