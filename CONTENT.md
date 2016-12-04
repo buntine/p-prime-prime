@@ -88,10 +88,10 @@ There are a few things we don't get out-of-the-box. Specifically, we need to be 
 Let's define those as follows:
 
 - **Increment**: `I = λR`, increment the current and move left, then move right.
-- **Decrement**: `D = I^N`, defined as `N` `I`'s in a row. So for a Turing machine where `N = 5` it's literally `IIIII`. So, you can think of `D` as a macro that expands at `N` `I`'s.
+- **Decrement**: `D = I^N`, defined as `N` `I`'s in a row. So for a Turing machine where `N = 5` it's literally `IIIII`. The best way to think of `D` is as a macro that expands to `N` `I`'s rather than a runtime construct like a function.
 - **Left**: `L = Dλ`, decrement the current cell and then increment it (to restore the original value) and more leftward.
 
-Ok, so now we can:
+To recap, we have now now defined the following instructions:
 
 - Move right: `R`
 - Move left: `L`
@@ -100,7 +100,7 @@ Ok, so now we can:
 - Open loop: `(`
 - Close loop: `)`
 
-So, finally, let's write the previous program again with our new abstractions:
+Now it's starting to look familiar! And so, finally, let's write the previous program again with our new abstractions:
 
 ```
 (D R I L)
@@ -112,17 +112,21 @@ And how does the same program look in Brainfuck?
 [- > + <]
 ```
 
-Awesome! Let's try another program<sup>6</sup> that moves a value from cell `0` two places to the right (cell `2`):
+Interesting! I might just take a moment here to state that there is something very fulfilling about defining a programming language in which `DRILL` is a valid program (although, I admit, Böhm used different names).
+
+Let's try another program<sup>6</sup> that moves a value from cell `0` two places to the right (cell `2`):
 
 ```
 R R ( D ) L L ( D R R I L L )
 ```
 
+And Brainfuck:
+
 ```
 > > [ - ] < < [ - > > + < < ]
 ```
 
-Even awesome-er!
+I'm sold.
 
 ## Conclusion
 
