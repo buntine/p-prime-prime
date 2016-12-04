@@ -81,20 +81,15 @@ Let's take a look.
 
 There are a few things we don't get out-of-the-box. Specifically, we need to be able to:
 
-- Move the tapehead leftward.
 - Increment the current cell (without moving the tapehead).
 - Decrement the current cell.
+- Move the tapehead leftward.
 
 Let's define those as follows:
 
-<dl>
-  <dt>`I = λR`</dt>
-  <dd>**Increment**: Increment the current and move left, then move right.</dd>
-  <dt>`D = i^N`</dt>
-  <dd>**Decrement**: This is defined as `N` `i`'s in a row. So for a Turing machine where `N = 5` it's literally `iiiii`. So, you can think of `d` as a macro that expands at `N` `i`'s.</dd>
-  <dt>`L = Dλ`</dt>
-  <dd>**Left**: Decrement the current cell and then increment it (to restore the original value) and more leftward.</dd>
-</dl>
+- **Increment**: `I = λR`, increment the current and move left, then move right.
+- **Decrement**: `D = I^N`, defined as `N` `I`'s in a row. So for a Turing machine where `N = 5` it's literally `IIIII`. So, you can think of `D` as a macro that expands at `N` `I`'s.
+- **Left**: `L = Dλ`, decrement the current cell and then increment it (to restore the original value) and more leftward.
 
 Ok, so now we can:
 
@@ -128,8 +123,6 @@ R R ( D ) L L ( D R R I L L )
 ```
 
 Even awesome-er!
-
-And, in Brainfuck:
 
 ## Conclusion
 
