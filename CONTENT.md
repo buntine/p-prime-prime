@@ -93,12 +93,12 @@ Let's define those as follows:
 
 Ok, so now we can:
 
-- Move right (`R`)
-- Move left (`L`)
-- Increment (`I`)
-- Decrement (`D`)
-- Open loop (`(`)
-- Close loop (`)`)
+- Move right: `R`
+- Move left: `L`
+- Increment: `I`
+- Decrement: `D`
+- Open loop: `(`
+- Close loop: `)`
 
 So, finally, let's write the previous program again with our new abstractions:
 
