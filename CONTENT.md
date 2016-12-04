@@ -4,9 +4,9 @@ When we think of esoteric programming languages, most of us quickly gravitate to
 
 The incessantly lovely Brainfuck was created in 1993 by Urban Müller in an attempt to construct a usable - albeit barely - programming language with a compiler under 1024 bytes. Why 1024 bytes? Well, he had been inspired by Wouter van Oortmerssen's [FALSE](aaa), a stack-based language with a compiler of exactly 1024 bytes. So I guess you could say it was a competition of sorts.
 
-In this article, purely for the fun of it, we will see that Brainfuck is actually an informal dialect of a programming language invented in Italy 30 years prior: Corrado Böhm's **P′′** (or "P Prime Prime"). I do expect that the reader has basic familiarity with Brainfuck - although, if you've never heard of it, I definitely recommend you take a look. Oh, and don't worry; despite the scary name, it's really very easy to learn (note, I didn't say "easy to use"!). 
+In this article, purely for the joy of it, we will see that Brainfuck is actually an informal dialect of a programming language invented in Italy 30 years prior: Corrado Böhm's **P′′** ("P Prime Prime" or "P Double-Prime). I do expect that the reader has basic familiarity with Brainfuck - although, if you've never heard of it, I definitely recommend you take a look. Oh, and don't worry; despite the scary name, it's really very easy to learn (note, I didn't say "easy to use"!). 
 
-Let's talk about a bit about Corrado Böhm's place in the history of Computer Science before we get into the nuts and bolts of his decidedly strangely-named creation.
+Let's talk a bit about Corrado Böhm's place in the history of Computer Science before we get into the nuts and bolts of his decidedly strangely-named creation.
 
 ## Corrado Böhm and the Structured Program Theorem
 
@@ -112,7 +112,7 @@ And how does the same program look in Brainfuck?
 [- > + <]
 ```
 
-Interesting! I might just take a moment here to state that there is something very fulfilling about defining a programming language in which `DRILL` is a valid program (although, I admit, Böhm used different names).
+Interesting! I might just take a moment here to mention that there is something very fulfilling about defining a programming language in which `DRILL` is a valid program (although, I admit, Böhm used different names).
 
 Let's try another program<sup>6</sup> that moves a value from cell `0` two places to the right (cell `2`):
 
@@ -126,12 +126,11 @@ And Brainfuck:
 > > [ - ] < < [ - > > + < < ]
 ```
 
-I'm sold.
+Well, I don't know about you, but I'm sold.
 
-## Conclusion
+You'll notice that we've skipped on the I/O instructions that exist in most dialects of Brainfuck. This is because the theoretical nature of P″ means that practical things like input and output would serve no purpose - we are only interested in the effect of the instructions upon the machine state (memory cells). But if you were to build a P″ interpreter (and I encourage you to do so!) then you could implement I/O exactly as Brainfuck does.
 
-- Why?
-- Thanks
+So, next time you're talking to someone who brings up Brainfuck, you can tell them all about the wonders of p″.
 
 1. BASIC, FORTRAN and COBOL all added support for structured programming in later versions.
 2. I guess this would make coroutines somewhat simple to implement.
