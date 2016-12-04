@@ -4,7 +4,7 @@ When we think of esoteric programming languages, most of us quickly gravitate to
 
 The incessantly lovely Brainfuck was created in 1993 by Urban Müller in an attempt to construct a usable - albeit barely - programming language with a compiler under 1024 bytes. Why 1024 bytes? Well, he had been inspired by Wouter van Oortmerssen's [FALSE](https://esolangs.org/wiki/FALSE), a stack-based language with a compiler of exactly 1024 bytes. So I guess you could say it was a competition of sorts.
 
-In this article, purely for the joy of it, we will see that **Brainfuck is actually an informal dialect of a programming language invented in Italy 30 years prior: Corrado Böhm's **P″** ("P Prime Prime" or "P Double-Prime)**. I do expect that the reader has basic familiarity with Brainfuck - although, if you've never heard of it, I definitely recommend you take a look. Oh, and don't worry; despite the scary name, it's really very easy to learn (note, I didn't say "easy to use"!). 
+In this article, purely for the joy of it, we will see that **Brainfuck is actually an informal dialect of a programming language invented in Italy 30 years prior: Corrado Böhm's P″ (pronounced "P Prime Prime" or "P Double-Prime)**. I do expect that the reader has basic familiarity with Brainfuck - although, if you've never heard of it, I definitely recommend you take a look. Oh, and don't worry; despite the scary name, it's really very easy to learn (note, I didn't say "easy to use"!). 
 
 Let's talk a bit about Corrado Böhm's place in the history of Computer Science before we get into the nuts and bolts of his decidedly strangely-named creation.
 
@@ -56,7 +56,7 @@ Böhm then goes on to explain the language semantics, which I've summarized and 
 - `λ` is the operation of replacing the symbol, `c`, at the tapehead with `(c+1) mod (N+1)` and then shifting the tapehead to the left one cell. Note the modulus operation - so if `N = 5` then trying to increment `5` will result in `0` (the blank symbol) because `6 mod 6 = 0`.
 - `(q)`, where `q` is any valid program, is interpreted as a *while loop* that iterates while the current cell does not contain the blank symbol (`0`). Endless loops are possible, of course.
 
-In a paper published in 1964 for the International Computation Center in Rome, Böhm proved that P″ was Turing-complete, which makes it the first structured programming language that did not contain a `GOTO` instruction but instead relied upon iteration. Djikstra would go on to reference P″ in his now-famous paper: [GOTO considered harmful](aaa).
+In a paper published in 1964 for the International Computation Center in Rome, Böhm proved that P″ was Turing-complete, which makes it the first structured programming language that did not contain a `GOTO` instruction but instead relied upon iteration. Djikstra would go on to cite Böhm and Jacopini and in his now-famous paper: [Go To Statement Considered Harmful](http://homepages.cwi.nl/~storm/teaching/reader/Dijkstra68.pdf).
 
 Here is a simple program to add two numbers together for a Turing machine where `N = 3` and main memory looks something like this `[2, 1]`:
 
@@ -65,7 +65,7 @@ Here is a simple program to add two numbers together for a Turing machine where 
  λRλRλR    # Decrement current cell (remember that N+1 wraps back around to 0, so decrementing is equivalent to N increments).
  R         # Move tapehead right.
  λR        # Increment current cell.
- λRλRλRλ   # Move tapehead left (by decrementing the current cell and then executing one final λ).
+ λRλRλRλ   # Move tapehead left by decrementing the current cell and then executing one final λ.
 )          # Iterate if the current cell is not 0. This means we iterate twice in this example.
 ```
 
