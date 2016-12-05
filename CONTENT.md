@@ -128,11 +128,13 @@ And Brainfuck:
 > > [ - ] < < [ - > > + < < ]
 ```
 
-Well, I don't know about you, but I'm sold.
+Well, I don't know about you, but I'm sold. I emplore you to keep trying other Brainfuck programs but, considering the two models of computation are now the same, it's my hypothesis that they will all be instruction-for-instruction identical.
 
-You'll notice that we've skipped on the I/O instructions that exist in most dialects of Brainfuck. This is because the theoretical nature of P″ means that practical things like input and output would serve no purpose - we are only interested in the effect of the instructions upon the machine state (memory cells). But if you were to build a P″ interpreter - and I encourage you to do so - then you could implement I/O exactly as Brainfuck does.
+One final note - you'll notice that we've skipped on the I/O instructions that exist in most dialects of Brainfuck. This is because the theoretical nature of P″ means that practical things like input and output would serve no purpose - we are only interested in the effect of the instructions upon the machine state (memory cells). But if you were to build a P″ interpreter - and I encourage you to do so - then you could implement I/O exactly as Brainfuck does.
 
-So, next time you're talking to someone who brings up Brainfuck, you can tell them all about the wonders of P″.
+## Thanks
+
+If you've made it this far - well done! And I'm sure the mental energy you've just exerted will all pay off in the long run. Think about it: Next time you're talking to someone who brings up Brainfuck, you can tell them all about the wonders of P″ and the genius of Corrado Böhm.
 
 1. BASIC, FORTRAN and COBOL all added support for structured programming in later versions.
 2. I guess this would make coroutines somewhat simple to implement.
