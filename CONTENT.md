@@ -16,13 +16,13 @@ When we talk about "programming" today, we are almost universally referring to w
 
 But it wasn't always this way...
 
-Many of the earliest programming languages, including heavy-hitters like BASIC, FORTRAN, COBOL <sup>1</sup> and several assembly languages, were *unstructured*: Statements were sequentially ordered, generally one per-line. And those lines were given labels or numbered in such a way that a program could perform an *unconditional jump* from one part of the program to the other.
+Many of the earliest programming languages, including heavy-hitters like BASIC, FORTRAN, COBOL<sup>1</sup> and several assembly languages, were *unstructured*: Statements were sequentially ordered, generally one per-line. And those lines were given labels or numbered in such a way that a program could perform an *unconditional jump* from one part of the program to the other.
 
-And when I say "jump", I really mean jump! Execution was not returned back to the calling context as is the case with a function call (unless, of course, it was physically asked to with another jump). One could, at least theoretically, jump straight into the middle of a `SUBROUTINE` or an `IF` <sup>2</sup>. Following the execution of a program meant tracing all of the jumps. Such a messy form of execution eventully gave rise to a phrase we still hear a lot of today (but never about our own code, of course): "Spaghetti code" <sup>3</sup>!
+And when I say "jump", I really mean jump! Execution was not returned back to the calling context as is the case with a function call (unless, of course, it was physically asked to with another jump). One could, at least theoretically, jump straight into the middle of a `SUBROUTINE` or an `IF`<sup>2</sup>. Following the execution of a program meant tracing all of the jumps. Such a messy form of execution eventully gave rise to a phrase we still hear a lot of today (but never about our own code, of course): "Spaghetti code"<sup>3</sup>!
 
 In case you haven't worked it out already; yes, I am talking about the notorious `GO TO`. 
 
-The early '60s were dominated by the debate over structured vs. non-structured programming. This was further ignited when a landmark paper titled "Flow diagrams, Turing Machines and Languages with only Two Formation Rules" was published by Corrado Böhm and Giuseppe Jacopini in 1966. This paper <sup>4</sup> provided the theoretical foundation for structured programming (and therefore the abolishment of `GOTO`) by proving that one can compute any computable function with only three simple control structures:
+The early '60s were dominated by the debate over structured vs. non-structured programming. This was further ignited when a landmark paper titled "Flow diagrams, Turing Machines and Languages with only Two Formation Rules" was published by Corrado Böhm and Giuseppe Jacopini in 1966. This paper<sup>4</sup> provided the theoretical foundation for structured programming (and therefore the abolishment of `GOTO`) by proving that one can compute any computable function with only three simple control structures:
 
 1. Execute one subprogram, and then another subprogram (sequence)
 2. Execute one of two subprograms according to the value of a boolean expression (selection/branching)
@@ -34,7 +34,7 @@ To demonstrate this in relation to Turing machines, they, of course, used a prog
 
 P″ is a very simple. In fact, it's so simple that the whole thing can get a bit confusing. Kinda' like those movies that are so bad they loop back around to being good again. The language consists of only four characters: `R`, `λ`, `(` and `)` that act upon a [Turing machine](https://en.wikipedia.org/wiki/Turing_machine) with infinite tape (main memory) and a finite alphabet (the set of things that can be written in a memory cell - such as the digits `0..9`).
 
-Böhm defined the syntax rules <sup>5</sup> as follows:
+Böhm defined the syntax rules<sup>5</sup> as follows:
 
 1. `λ, R ∈ P″`
 2. `q₁, q₂ ∈ P″` implies `q₁q₂ ∈ P″`
@@ -58,7 +58,7 @@ Böhm then goes on to explain the language semantics, which I've summarized and 
 
 So, we can think of P″ as being a literal implementation of a Turing machine in a similar sense that we can see the original Lisp as being an implementation of Church' Lambda Calculus. Just far less useful to the practicing programmer.
 
-In a paper published in 1964 for the International Computation Center in Rome, Böhm proved that P″ was Turing-complete, which makes it the first *structured* programming language that did not contain a `GOTO` instruction but instead relied upon iteration. Djikstra would go on to cite Böhm and Jacopini and in his now-famous paper, [Go To Statement Considered Harmful](http://homepages.cwi.nl/~storm/teaching/reader/Dijkstra68.pdf), which would help to solidify their place in computer science folklore.
+In a paper published in 1964 for the International Computation Center in Rome<sup>6</sup>, Böhm proved that P″ was Turing-complete, which makes it the first *structured* programming language that did not contain a `GOTO` instruction but instead relied upon iteration. Djikstra would go on to cite Böhm and Jacopini and in his now-famous paper, [Go To Statement Considered Harmful](http://homepages.cwi.nl/~storm/teaching/reader/Dijkstra68.pdf), which would help to solidify their place in computer science folklore.
 
 Here is a simple program to add two numbers together for a Turing machine where `N = 3` and main memory looks something like this `[2, 1]`:
 
@@ -116,7 +116,7 @@ And how does the same program look in Brainfuck?
 
 Interesting! I might just take a moment here to mention that there is something very fulfilling about defining a programming language in which `DRILL` is a valid program (although, I must admit, Böhm used different names).
 
-Let's try another program<sup>6</sup> that moves a value from cell `0` two places to the right (cell `2`):
+Let's try another program<sup>7</sup> that moves a value from cell `0` two places to the right (cell `2`):
 
 ```
 R R ( D ) L L ( D R R I L L )
@@ -136,7 +136,8 @@ So, next time you're talking to someone who brings up Brainfuck, you can tell th
 
 1. BASIC, FORTRAN and COBOL all added support for structured programming in later versions.
 2. I guess this would make coroutines somewhat simple to implement.
-3. It's not known exactly who coined this term, but an early usage comes from the Guy L. Steeles 1977 paper: [Macaroni is better than spaghetti](http://dl.acm.org/citation.cfm?id=806933)
-4. This paper is known to be cited more than it's read. OK, I admit, I tried to read it. I really did. But before you judge me - [give it a shot yourself](http://www.cs.unibo.it/~martini/PP/bohm-jac.pdf).
-5. Had Backus-Naur form been popular in '64, it would have looked something like this: `TODO`.
-6. Courtesy of [esolangs](https://esolangs.org/wiki/brainfuck).
+3. It's not known exactly who coined this term, but according to Wikipedia, an early usage comes from the Guy L. Steeles 1977 paper: [Macaroni is better than spaghetti](http://dl.acm.org/citation.cfm?id=806933)
+4. This paper is known to be cited more than it's read. OK, I admit, I *tried* to get through it all. I really did. But before you judge me - [give it a shot yourself](http://www.cs.unibo.it/~martini/PP/bohm-jac.pdf).
+5. Had Backus-Naur Form been popular in '64, it would have looked something like this: `<program> ::= R|λ|<program><program>|(<program>)`.
+6. I have searched high-and-low for a copy of this paper. The ICC was decommissioned in the late-60s and most of their publications are very difficult to find now. I've tracked a physical copy down to the British Library, but am yet to get my hands on it.
+7. Courtesy of [esolangs](https://esolangs.org/wiki/brainfuck).
