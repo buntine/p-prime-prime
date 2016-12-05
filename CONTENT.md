@@ -10,7 +10,7 @@ When we think of esoteric programming languages, most of us quickly gravitate to
 
 The incessantly lovely Brainfuck was created in 1993 by Urban Müller in an attempt to construct a usable - albeit barely - programming language with a compiler under 1024 bytes. Why 1024 bytes? Well, he had been inspired by Wouter van Oortmerssen's [FALSE](https://esolangs.org/wiki/FALSE), a stack-based language with a compiler of exactly 1024 bytes. So I guess you could say it was a competition of sorts.
 
-In this article, purely for the joy of it, we will see that **Brainfuck is actually an informal dialect of a programming language invented in Italy 30 years prior: Corrado Böhm's P″ (pronounced "P Prime Prime" or "P Double-Prime)**.
+In this article, purely for the joy of it, we will see that **Brainfuck is actually an informal dialect of a programming language invented in Italy more than 50 years ago: Corrado Böhm's P″ (pronounced "P Prime Prime" or "P Double-Prime)**.
 
 I do expect that the reader has basic familiarity with Brainfuck - although, if you've never heard of it, I definitely recommend you take a look. Oh, and don't worry; despite the scary name, it's really very easy to learn (note, I didn't say "easy to use"!).
 
@@ -24,13 +24,13 @@ When we talk about "programming" today, we are almost universally referring to w
 
 But it wasn't always this way...
 
-Many of the earliest programming languages, including heavy-hitters like BASIC, FORTRAN, COBOL<sup>1</sup> and several assembly languages, were [unstructured](https://en.wikipedia.org/wiki/Non-structured_programming): Statements were sequentially ordered, generally one per-line. And those lines were given labels or numbered in such a way that a program could perform an *unconditional jump* from one part of the program to the other.
+Many of the earliest programming languages, including heavy-hitters like BASIC, FORTRAN and COBOL<sup>1</sup>, were [unstructured](https://en.wikipedia.org/wiki/Non-structured_programming): Statements were sequentially ordered, generally one per-line. And those lines were given labels or numbered in such a way that a program could perform an *unconditional jump* from one part of the program to the other.
 
 And when I say "jump", I really mean jump! Execution was not returned back to the calling context as is the case with a function call (unless, of course, it was physically asked to with another jump). One could, at least theoretically, jump straight into the middle of a `SUBROUTINE` or an `IF`<sup>2</sup>. Following the execution of a program meant tracing all of the jumps. Such a messy form of execution eventually gave rise to a phrase we still hear a lot of today (but never about our own code, of course): "Spaghetti code"<sup>3</sup>!
 
 In case you haven't worked it out already; yes, I am talking about the notorious `GO TO`. 
 
-The early '60s were dominated by the debate over structured vs. non-structured programming. This was further ignited when a landmark paper titled "Flow diagrams, Turing Machines and Languages with only Two Formation Rules" was published by Corrado Böhm and Giuseppe Jacopini in 1966. This paper<sup>4</sup> provided the [theoretical foundation for structured programming](https://en.wikipedia.org/wiki/Structured_program_theorem) (and therefore the abolishment of `GO TO`) by proving that one can compute any computable function with only three simple control structures:
+The early '60s were dominated by the debate over structured vs. non-structured programming. This was further ignited when, in 1966, a landmark paper titled "Flow diagrams, Turing Machines and Languages with only Two Formation Rules" was published by Corrado Böhm and Giuseppe Jacopini. This paper<sup>4</sup> provided the [theoretical foundation for structured programming](https://en.wikipedia.org/wiki/Structured_program_theorem) (and therefore the abolishment of `GO TO`) by proving that one can compute any computable function with only three simple control structures:
 
 1. Execute one subprogram, and then another subprogram (sequence)
 2. Execute one of two subprograms according to the value of a boolean expression (selection/branching)
@@ -128,7 +128,9 @@ And how does the same program look in Brainfuck?
 [- > + <]
 ```
 
-Interesting! I might just take a moment here to mention that there is something very fulfilling about defining a programming language in which `DRILL` is a valid program (although, I must admit, Böhm used different names).
+Interesting! Although we've decided upon slightly different syntax, these two programs are now semantically identical.
+
+I might just take a moment here to mention that there is something very fulfilling about defining a programming language in which `DRILL` is a valid program (although, I must admit, Böhm used different names). I think I'll call my dialect **"Braindriller"**.
 
 Let's try another program<sup>7</sup> that moves a value from cell `0` two places to the right (cell `2`):
 
