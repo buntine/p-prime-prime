@@ -1,3 +1,11 @@
+---
+title: P″ - The original Brainf*ck and mother of the Turing tarpits
+published: false
+description: A look at the P″ esoteric programming language and it's relation to Brainf*ck
+cover_image: 
+tags: computer science, brainfuck, turing machines
+---
+
 When we think of esoteric programming languages, most of us quickly gravitate towards one in particular: the infamous [Brainfuck](https://en.wikipedia.org/wiki/Brainfuck) - a super minimal programming language that achieves [Turing Completeness](https://en.wikipedia.org/wiki/Turing_completeness) in just six simple instructions (not including the two for I/O).
 
 The incessantly lovely Brainfuck was created in 1993 by Urban Müller in an attempt to construct a usable - albeit barely - programming language with a compiler under 1024 bytes. Why 1024 bytes? Well, he had been inspired by Wouter van Oortmerssen's [FALSE](https://esolangs.org/wiki/FALSE), a stack-based language with a compiler of exactly 1024 bytes. So I guess you could say it was a competition of sorts.
@@ -30,7 +38,7 @@ The early '60s were dominated by the debate over structured vs. non-structured p
 
 To demonstrate this in relation to Turing machines, they, of course, used a programming language: **P″**
 
-## P″, the Grandmother of the Turing Tarpits
+## P″, the mother of the Turing tarpits
 
 P″ is a very simple. In fact, it's so simple that the whole thing can get a bit confusing. Kinda' like those movies that are so bad they loop back around to being good again. The language consists of only four characters: `R`, `λ`, `(` and `)` that act upon a [Turing machine](https://en.wikipedia.org/wiki/Turing_machine) with infinite tape (main memory) and a finite alphabet (the set of things that can be written in a memory cell - such as the digits `0..9`).
 
@@ -136,7 +144,7 @@ And Brainfuck:
 
 Well, I don't know about you, but I'm sold. I implore you to keep trying other Brainfuck programs but, considering the two models of computation are now the same, it's my hypothesis that they will all be instruction-for-instruction identical.
 
-One final note - you'll notice that we've skipped on the I/O instructions that exist in most dialects of Brainfuck. This is because the theoretical nature of P″ means that practical things like input and output would serve no purpose - we are only interested in the effect of the instructions upon the machine state (memory cells). But if you were to build a P″ interpreter - and I encourage you to do so - then you could implement I/O exactly as Brainfuck does.
+One final note - you'll notice that we've skipped on the I/O instructions `,` and `.` that exist in most dialects of Brainfuck. This is because the theoretical nature of P″ means that practical things like input and output would serve no purpose - we are only interested in the effect of the instructions upon the machine state (memory cells). But if you were to build a P″ interpreter - and I encourage you to do so - then you could implement I/O exactly as Brainfuck does.
 
 ## Thanks
 
