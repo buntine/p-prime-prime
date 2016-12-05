@@ -136,6 +136,8 @@ One final note - you'll notice that we've skipped on the I/O instructions that e
 
 If you've made it this far - well done! And I'm sure the mental energy you've just exerted will all pay off in the long run. Think about it: Next time you're talking to someone who brings up Brainfuck, you can tell them all about the wonders of P″ and the genius of Corrado Böhm.
 
+As always, corrections and feedback are always more than welcome. :)
+
 1. BASIC, FORTRAN and COBOL all added support for structured programming in later versions.
 2. I guess this would make coroutines somewhat simple to implement.
 3. It's not known exactly who coined this term, but according to Wikipedia, an early usage comes from the Guy L. Steeles 1977 paper: [Macaroni is better than spaghetti](http://dl.acm.org/citation.cfm?id=806933)
