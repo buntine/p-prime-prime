@@ -56,7 +56,7 @@ Böhm then goes on to explain the language semantics, which I've summarized and 
 - `λ` is the operation of replacing the symbol, `c`, at the tapehead with `(c+1) mod (N+1)` and then shifting the tapehead to the left one cell. Note the modulus operation - so if `N = 5` then trying to increment `5` will result in `0` (the blank symbol) because `6 mod 6 = 0`.
 - `(q)`, where `q` is any valid program, is interpreted as a *while loop* that iterates while the current cell does not contain the blank symbol (`0`). Endless loops are possible, of course.
 
-So, we can think of P″ as being a literal implementation of a Turing machine in a similar sense that we can see the original Lisp as being an implementation of Church' Lambda Calculus. Just far less useful to the practising programmer.
+So, we can think of P″ as being a literal implementation of a Turing machine in a similar sense that we can see the original Lisp as being an implementation of Church' Lambda Calculus. Just far less useful to the practicing programmer.
 
 In a paper published in 1964 for the International Computation Center in Rome, Böhm proved that P″ was Turing-complete, which makes it the first *structured* programming language that did not contain a `GOTO` instruction but instead relied upon iteration. Djikstra would go on to cite Böhm and Jacopini and in his now-famous paper, [Go To Statement Considered Harmful](http://homepages.cwi.nl/~storm/teaching/reader/Dijkstra68.pdf), which would help to solidify their place in computer science folklore.
 
@@ -73,7 +73,7 @@ Here is a simple program to add two numbers together for a Turing machine where 
 
 At the end of execution main memory will look like this: `[0, 3]`.
 
-Ok, cool, maybe you can see some minor similarities to Brainfuck, but we are definitely missing some things. And even in esoteric programming language terms, it's all very clunky!
+Ok, cool, I guess. Maybe you can see some minor similarities to Brainfuck, but we are definitely missing some things. And even in esoteric programming language terms, it's all very clunky!
 
 But, luckily for us, Böhm provided several small abstractions that allow us to write much simpler programs. And in doing so we will see that Brainfuck and P″ are equivalent.
 
@@ -81,17 +81,17 @@ Let's take a look.
 
 ## Brainfuck == P″
 
-There are a few things we don't get out-of-the-box. Specifically, we need to be able to:
+There are a few instructions that Brainfuck gives us that we don't get out-of-the-box with P″. Specifically, we still need to fill in the following gaps:
 
-- Increment the current cell (without moving the tapehead).
+- Increment the current cell (without moving the tapehead!).
 - Decrement the current cell.
 - Move the tapehead leftward.
 
 Let's define those as follows:
 
-- **Increment**: `I = λR`, increment the current and move left, then move right.
-- **Decrement**: `D = I^N`, defined as `N` `I`'s in a row. So for a Turing machine where `N = 5` it's literally `IIIII`. The best way to think of `D` is as a macro that expands to `N` `I`'s rather than a runtime construct like a function.
-- **Left**: `L = Dλ`, decrement the current cell and then increment it (to restore the original value) and more leftward.
+- **Increment**: `I = λR`; increment the current cell and move left, then move right.
+- **Decrement**: `D = I^N`; defined as `N` `I`'s in a row. So for a Turing machine where `N = 5` it's literally `IIIII`. The best way to think of `D` is as a macro that expands to `N` `I`'s rather than a runtime construct like a function.
+- **Left**: `L = Dλ`; decrement the current cell and then increment it (to restore the original value) and move left.
 
 To recap, we have now now defined the following instructions:
 
@@ -114,7 +114,7 @@ And how does the same program look in Brainfuck?
 [- > + <]
 ```
 
-Interesting! I might just take a moment here to mention that there is something very fulfilling about defining a programming language in which `DRILL` is a valid program (although, I admit, Böhm used different names).
+Interesting! I might just take a moment here to mention that there is something very fulfilling about defining a programming language in which `DRILL` is a valid program (although, I must admit, Böhm used different names).
 
 Let's try another program<sup>6</sup> that moves a value from cell `0` two places to the right (cell `2`):
 
@@ -130,7 +130,7 @@ And Brainfuck:
 
 Well, I don't know about you, but I'm sold.
 
-You'll notice that we've skipped on the I/O instructions that exist in most dialects of Brainfuck. This is because the theoretical nature of P″ means that practical things like input and output would serve no purpose - we are only interested in the effect of the instructions upon the machine state (memory cells). But if you were to build a P″ interpreter (and I encourage you to do so!) then you could implement I/O exactly as Brainfuck does.
+You'll notice that we've skipped on the I/O instructions that exist in most dialects of Brainfuck. This is because the theoretical nature of P″ means that practical things like input and output would serve no purpose - we are only interested in the effect of the instructions upon the machine state (memory cells). But if you were to build a P″ interpreter - and I encourage you to do so - then you could implement I/O exactly as Brainfuck does.
 
 So, next time you're talking to someone who brings up Brainfuck, you can tell them all about the wonders of P″.
 
