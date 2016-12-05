@@ -95,12 +95,12 @@ Let's define those as follows:
 
 To recap, we have now now defined the following instructions:
 
-- Move right: `R`
-- Move left: `L`
-- Increment: `I`
-- Decrement: `D`
-- Open loop: `(`
-- Close loop: `)`
+- **Move right**: `R`
+- **Move left**: `L`
+- **Increment**: `I`
+- **Decrement**: `D`
+- **Open loop**: `(`
+- **Close loop**: `)`
 
 Now it's starting to look familiar! And so, finally, let's write the previous program again with our new abstractions:
 
