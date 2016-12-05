@@ -1,28 +1,28 @@
-# P″ - The Original Brainf*ck
-
 When we think of esoteric programming languages, most of us quickly gravitate towards one in particular: the infamous [Brainfuck](https://en.wikipedia.org/wiki/Brainfuck) - a super minimal programming language that achieves [Turing Completeness](https://en.wikipedia.org/wiki/Turing_completeness) in just six simple instructions (not including the two for I/O).
 
 The incessantly lovely Brainfuck was created in 1993 by Urban Müller in an attempt to construct a usable - albeit barely - programming language with a compiler under 1024 bytes. Why 1024 bytes? Well, he had been inspired by Wouter van Oortmerssen's [FALSE](https://esolangs.org/wiki/FALSE), a stack-based language with a compiler of exactly 1024 bytes. So I guess you could say it was a competition of sorts.
 
-In this article, purely for the joy of it, we will see that **Brainfuck is actually an informal dialect of a programming language invented in Italy 30 years prior: Corrado Böhm's P″ (pronounced "P Prime Prime" or "P Double-Prime)**. I do expect that the reader has basic familiarity with Brainfuck - although, if you've never heard of it, I definitely recommend you take a look. Oh, and don't worry; despite the scary name, it's really very easy to learn (note, I didn't say "easy to use"!). 
+In this article, purely for the joy of it, we will see that **Brainfuck is actually an informal dialect of a programming language invented in Italy 30 years prior: Corrado Böhm's P″ (pronounced "P Prime Prime" or "P Double-Prime)**.
 
-Let's talk a bit about Corrado Böhm's place in the history of Computer Science before we get into the nuts and bolts of his decidedly strangely-named creation.
+I do expect that the reader has basic familiarity with Brainfuck - although, if you've never heard of it, I definitely recommend you take a look. Oh, and don't worry; despite the scary name, it's really very easy to learn (note, I didn't say "easy to use"!).
+
+Let's talk a bit about Corrado Böhm's place in the history of Computer Science before we get into the nuts and bolts of his decidedly strange creation.
 
 ## Corrado Böhm and the Structured Program Theorem
 
 **You can skip this section if you're only interested in the details and not the motivation.**
 
-When we talk about "programming" today, we are almost universally referring to what is known as "[structured programming](https://en.wikipedia.org/wiki/Structured_programming)". That is, writing programs that employ the use of block structures, functions and loops. Pretty simple, huh? In fact, this all seems so obvious nowadays that we don't feel the need to qualify so specifically what we mean - so we use more general terms like "imperative" and "declarative" to describe our favourite paradigms of programming. The whole "structured" part is kind of a given.
+When we talk about "programming" today, we are almost universally referring to what is known as "[structured programming](https://en.wikipedia.org/wiki/Structured_programming)". That is, writing programs that employ the use of block structures, functions and loops. Pretty simple, huh? In fact, this all seems so obvious nowadays that we don't feel the need to qualify so specifically what we mean - so we use more general terms like "imperative" and "declarative" to describe our favorite paradigms of programming. The whole "structured" part is kind of a given.
 
 But it wasn't always this way...
 
-Many of the earliest programming languages, including heavy-hitters like BASIC, FORTRAN, COBOL<sup>1</sup> and several assembly languages, were *unstructured*: Statements were sequentially ordered, generally one per-line. And those lines were given labels or numbered in such a way that a program could perform an *unconditional jump* from one part of the program to the other.
+Many of the earliest programming languages, including heavy-hitters like BASIC, FORTRAN, COBOL<sup>1</sup> and several assembly languages, were [unstructured](https://en.wikipedia.org/wiki/Non-structured_programming): Statements were sequentially ordered, generally one per-line. And those lines were given labels or numbered in such a way that a program could perform an *unconditional jump* from one part of the program to the other.
 
-And when I say "jump", I really mean jump! Execution was not returned back to the calling context as is the case with a function call (unless, of course, it was physically asked to with another jump). One could, at least theoretically, jump straight into the middle of a `SUBROUTINE` or an `IF`<sup>2</sup>. Following the execution of a program meant tracing all of the jumps. Such a messy form of execution eventully gave rise to a phrase we still hear a lot of today (but never about our own code, of course): "Spaghetti code"<sup>3</sup>!
+And when I say "jump", I really mean jump! Execution was not returned back to the calling context as is the case with a function call (unless, of course, it was physically asked to with another jump). One could, at least theoretically, jump straight into the middle of a `SUBROUTINE` or an `IF`<sup>2</sup>. Following the execution of a program meant tracing all of the jumps. Such a messy form of execution eventually gave rise to a phrase we still hear a lot of today (but never about our own code, of course): "Spaghetti code"<sup>3</sup>!
 
 In case you haven't worked it out already; yes, I am talking about the notorious `GO TO`. 
 
-The early '60s were dominated by the debate over structured vs. non-structured programming. This was further ignited when a landmark paper titled "Flow diagrams, Turing Machines and Languages with only Two Formation Rules" was published by Corrado Böhm and Giuseppe Jacopini in 1966. This paper<sup>4</sup> provided the theoretical foundation for structured programming (and therefore the abolishment of `GOTO`) by proving that one can compute any computable function with only three simple control structures:
+The early '60s were dominated by the debate over structured vs. non-structured programming. This was further ignited when a landmark paper titled "Flow diagrams, Turing Machines and Languages with only Two Formation Rules" was published by Corrado Böhm and Giuseppe Jacopini in 1966. This paper<sup>4</sup> provided the [theoretical foundation for structured programming](https://en.wikipedia.org/wiki/Structured_program_theorem) (and therefore the abolishment of `GO TO`) by proving that one can compute any computable function with only three simple control structures:
 
 1. Execute one subprogram, and then another subprogram (sequence)
 2. Execute one of two subprograms according to the value of a boolean expression (selection/branching)
@@ -58,7 +58,7 @@ Böhm then goes on to explain the language semantics, which I've summarized and 
 
 So, we can think of P″ as being a literal implementation of a Turing machine in a similar sense that we can see the original Lisp as being an implementation of Church' Lambda Calculus. Just far less useful to the practicing programmer.
 
-In a paper published in 1964 for the International Computation Center in Rome<sup>6</sup>, Böhm proved that P″ was Turing-complete, which makes it the first *structured* programming language that did not contain a `GOTO` instruction but instead relied upon iteration. Djikstra would go on to cite Böhm and Jacopini and in his now-famous paper, [Go To Statement Considered Harmful](http://homepages.cwi.nl/~storm/teaching/reader/Dijkstra68.pdf), which would help to solidify their place in computer science folklore.
+In a paper published in 1964 for the International Computation Center in Rome<sup>6</sup>, Böhm proved that P″ was Turing-complete, which makes it the first *structured* programming language that did not contain a `GO TO` instruction but instead relied upon iteration. Djikstra would go on to cite Böhm and Jacopini and in his now-famous paper, [Go To Statement Considered Harmful](http://homepages.cwi.nl/~storm/teaching/reader/Dijkstra68.pdf), which would help to solidify their place in computer science folklore.
 
 Here is a simple program to add two numbers together for a Turing machine where `N = 3` and main memory looks something like this `[2, 1]`:
 
@@ -79,7 +79,7 @@ But, luckily for us, Böhm provided several small abstractions that allow us to 
 
 Let's take a look.
 
-## Brainfuck == P″
+## When two become one
 
 There are a few instructions that Brainfuck gives us that we don't get out-of-the-box with P″. Specifically, we still need to fill in the following gaps:
 
@@ -89,9 +89,15 @@ There are a few instructions that Brainfuck gives us that we don't get out-of-th
 
 Let's define those as follows:
 
-- **Increment**: `I = λR`; increment the current cell and move left, then move right.
-- **Decrement**: `D = I^N`; defined as `N` `I`'s in a row. So for a Turing machine where `N = 5` it's literally `IIIII`. The best way to think of `D` is as a macro that expands to `N` `I`'s rather than a runtime construct like a function.
-- **Left**: `L = Dλ`; decrement the current cell and then increment it (to restore the original value) and move left.
+- **Increment**
+  - `I = λR`
+  - Increment the current cell and move left, then move right.
+- **Decrement**
+  - `D = I^N`
+  - This is defined as `N` `I`'s in a row. So for a Turing machine where `N = 5` it's literally `IIIII`. The best way to think of `D` is as a macro that expands to `N` `I`'s rather than a runtime construct like a function.
+- **Left**
+  - `L = Dλ`
+  - Decrement the current cell and then increment it (to restore the original value) and move left.
 
 To recap, we have now now defined the following instructions:
 
@@ -128,7 +134,7 @@ And Brainfuck:
 > > [ - ] < < [ - > > + < < ]
 ```
 
-Well, I don't know about you, but I'm sold. I emplore you to keep trying other Brainfuck programs but, considering the two models of computation are now the same, it's my hypothesis that they will all be instruction-for-instruction identical.
+Well, I don't know about you, but I'm sold. I implore you to keep trying other Brainfuck programs but, considering the two models of computation are now the same, it's my hypothesis that they will all be instruction-for-instruction identical.
 
 One final note - you'll notice that we've skipped on the I/O instructions that exist in most dialects of Brainfuck. This is because the theoretical nature of P″ means that practical things like input and output would serve no purpose - we are only interested in the effect of the instructions upon the machine state (memory cells). But if you were to build a P″ interpreter - and I encourage you to do so - then you could implement I/O exactly as Brainfuck does.
 
@@ -140,7 +146,7 @@ As always, corrections and feedback are always more than welcome. :)
 
 1. BASIC, FORTRAN and COBOL all added support for structured programming in later versions.
 2. I guess this would make coroutines somewhat simple to implement.
-3. It's not known exactly who coined this term, but according to Wikipedia, an early usage comes from the Guy L. Steeles 1977 paper: [Macaroni is better than spaghetti](http://dl.acm.org/citation.cfm?id=806933)
+3. It's not known exactly who coined this term, but according to Wikipedia, an early usage comes from the Guy L. Steele's 1977 paper: [Macaroni is better than spaghetti](http://dl.acm.org/citation.cfm?id=806933)
 4. This paper is known to be cited more than it's read. OK, I admit, I *tried* to get through it all. I really did. But before you judge me - [give it a shot yourself](http://www.cs.unibo.it/~martini/PP/bohm-jac.pdf).
 5. Had Backus-Naur Form been popular in '64, it would have looked something like this: `<program> ::= R|λ|<program><program>|(<program>)`.
 6. I have searched high-and-low for a copy of this paper. The ICC was decommissioned in the late-60s and most of their publications are very difficult to find now. I've tracked a physical copy down to the British Library, but am yet to get my hands on it.
