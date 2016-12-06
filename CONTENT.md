@@ -2,7 +2,7 @@
 title: P″ - The original Brainf*ck and mother of the Turing tarpits
 published: false
 description: A look at the P″ esoteric programming language and it's relation to Brainf*ck
-cover_image: 
+cover_image: http://i.imgur.com/xif1Dwp.jpg    
 tags: computer science, brainfuck, turing machines
 ---
 
@@ -64,7 +64,7 @@ Böhm then goes on to explain the language semantics, which I've summarized and 
 - `λ` is the operation of replacing the symbol, `c`, at the tapehead with `(c+1) mod (N+1)` and then shifting the tapehead to the left one cell. Note the modulus operation - so if `N = 5` then trying to increment `5` will result in `0` (the blank symbol) because `6 mod 6 = 0`.
 - `(q)`, where `q` is any valid program, is interpreted as a *while loop* that iterates while the current cell does not contain the blank symbol (`0`). Endless loops are possible, of course.
 
-So, we can think of P″ as being a literal implementation of a Turing machine in a similar sense that we can see the original Lisp as being an implementation of Church' Lambda Calculus. Just far less useful to the practicing programmer.
+So, we can think of P″ as being a near-literal implementation of a Turing machine in a similar sense that we can see the original Lisp as being deeply related to Church' Lambda Calculus. The former is just far less useful to the practicing programmer.
 
 In a paper published in 1964 for the International Computation Center in Rome<sup>6</sup>, Böhm proved that P″ was Turing-complete, which makes it the first *structured* programming language that did not contain a `GO TO` instruction but instead relied upon iteration. Djikstra would go on to cite Böhm and Jacopini and in his now-famous paper, [Go To Statement Considered Harmful](http://homepages.cwi.nl/~storm/teaching/reader/Dijkstra68.pdf), which would help to solidify their place in computer science folklore.
 
@@ -103,7 +103,7 @@ Let's define those as follows:
 - **Decrement**
   - `D = I^N`
   - This is defined as `N` `I`'s in a row. So for a Turing machine where `N = 5` it's literally `IIIII`. The best way to think of `D` is as a macro that expands to `N` `I`'s rather than a runtime construct like a function.
-- **Left**
+- **Move left**
   - `L = Dλ`
   - Decrement the current cell and then increment it (to restore the original value) and move left.
 
@@ -161,3 +161,4 @@ As always, corrections and feedback are always more than welcome. :)
 5. Had Backus-Naur Form been popular in '64, it would have looked something like this: `<program> ::= R|λ|<program><program>|(<program>)`.
 6. I have searched high-and-low for a copy of this paper. The ICC was decommissioned in the late-60s and most of their publications are very difficult to find now. I've tracked a physical copy down to the British Library, but am yet to get my hands on it.
 7. Courtesy of [esolangs](https://esolangs.org/wiki/brainfuck).
+8. Cover image, originally from [corradobohm.it](http://www.corradobohm.it/), shows the attendees of the first Lambda Calculus Conference (1979). Corrado has the white hair in the second row. 
